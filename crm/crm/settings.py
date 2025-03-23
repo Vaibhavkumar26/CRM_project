@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+from crm.env import config
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,8 +20,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-g-ddo3ym)7rrhr1du0vbs@osoba^3%*$+q*xck3s3!r5%b3#!#'
-
+#SECRET_KEY = 'django-insecure-g-ddo3ym)7rrhr1du0vbs@osoba^3%*$+q*xck3s3!r5%b3#!#'
+SECRET_KEY=config("DJANGO_SECERT_KEY",default=None,)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
